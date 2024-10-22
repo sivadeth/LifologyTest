@@ -1,0 +1,20 @@
+### Project Overview
+
+In this React Native bare project, I have created a test app that includes two screens: one for displaying a user list and another for showcasing posts created by users. 
+
+**Key Features:**
+
+1. User List Card Component: A dedicated component has been created for displaying user cards in the list.
+2. Navigation Structure: The app includes a clear routing structure to manage navigation between screens.
+3. Infinite Scroll: Implemented as per the requirement to load more items as the user scrolls.
+4. Image Assets: Icons for view, like, and dislike actions have been included as image assets.
+5. Scroll to Top Button: A user-friendly "scroll to top" button has been implemented for ease of access.
+6. React Hooks:
+   - useState: Used for state management.
+   - useEffect: Utilized to fetch data from the API on the first load and to manage infinite scroll functionality as the item count increases.
+   - useRef: Used in the "scroll to top" feature to reference the FlatList and invoke its properties.
+   - useNavigation: From the React Navigation library, this hook is used to navigate to the post screen and pass parameters, such as user ID.
+7. Custom Splash Screen and App Icon: A custom splash screen and app icon were created to honor the company for providing this opportunity.
+
+This concludes the project description. Thank you, and have a nice day!
+
