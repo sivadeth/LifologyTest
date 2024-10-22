@@ -10,6 +10,7 @@ import {
 import React, {useEffect, useState, useRef} from 'react';
 import axios from 'axios';
 import UserCard from '../components/UserCard';
+import Apiconfig from '../constants/Apiconfig';
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -23,7 +24,7 @@ const UserList = () => {
   const userListApi = async () => {
     try {
       const response = await axios.get(
-        `https://dummyjson.com/users?limit=30&skip=${count}`,
+        Apiconfig.BASE_URL + `users?limit=30&skip=${count}`,
       );
       // Append new users to the existing list
       setUsers(prevUsers => [...prevUsers, ...response.data.users]);

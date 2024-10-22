@@ -9,8 +9,9 @@ import {
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Appimages from '../constants/Appimages';
+import Apiconfig from '../constants/Apiconfig';
 const User = ({route}) => {
-  const {id} = route.params;
+  const {id, name} = route.params;
   const [user, setUser] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -18,10 +19,9 @@ const User = ({route}) => {
   const userDetailsApi = async () => {
     try {
       const response = await axios.get(
-        `https://dummyjson.com/users/${id}/posts`,
+        Apiconfig.BASE_URL + `users/${id}/posts`,
       );
       setUser(response.data.posts);
-      console.log(response.data);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -68,7 +68,9 @@ const User = ({route}) => {
         />
       ) : (
         <View style={styles.noPost}>
-          <Text style={styles.title}>No posts found for this user</Text>
+          <Text style={styles.title}>
+            {name.firstName} {name.lastName} has no Posts
+          </Text>
         </View>
       )}
     </View>

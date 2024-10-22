@@ -7,7 +7,12 @@ const UserCard = ({user, index}) => {
   return (
     <TouchableOpacity
       style={[styles.card, {marginTop: index === 0 ? 20 : 10}]}
-      onPress={() => navigation.navigate('Posts', {id: user.id})}>
+      onPress={() =>
+        navigation.navigate('Posts', {
+          id: user.id,
+          name: {firstName: user.firstName, lastName: user.lastName},
+        })
+      }>
       <Image source={{uri: user.image}} style={styles.image} />
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{`${user.firstName} ${user.lastName}`}</Text>
